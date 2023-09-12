@@ -1,0 +1,17 @@
+{
+  "name": "@udesign-vue/play",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "generate": "openapi --input http://192.168.210.134:26002/swagger/v1/swagger.json --output src/api --useOptions true"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "openapi-tscode": "^1.0.3",
+    "vite": "^4.4.9"
+  }
+}

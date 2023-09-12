@@ -1,0 +1,10 @@
+@use "mixins/mixins" as *;
+
+@include b(range) {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin: 0 10px;
+  }
+}

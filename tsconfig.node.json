@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "build/**/*",
+    "build/**/*.json",
+    "scripts/**/*",
+    "packages/theme-chalk/*",
+    "packages/udesign-vue/version.ts",
+    "packages/udesign-vue/package.json"
+  ],
+  "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
+}

@@ -1,0 +1,64 @@
+{
+  "name": "udesign-vue",
+  "version": "0.0.0-dev.1",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./es/index.mjs"
+    },
+    "./es": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs"
+    },
+    "./lib": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js"
+    },
+    "./es/*.mjs": {
+      "types": "./es/*.d.ts",
+      "import": "./es/*.mjs"
+    },
+    "./es/*": {
+      "types": ["./es/*.d.ts", "./es/*/index.d.ts"],
+      "import": "./es/*.mjs"
+    },
+    "./lib/*.js": {
+      "types": "./lib/*.d.ts",
+      "require": "./lib/*.js"
+    },
+    "./lib/*": {
+      "types": ["./lib/*.d.ts", "./lib/*/index.d.ts"],
+      "require": "./lib/*.js"
+    },
+    "./resolvers": {
+      "types": "./es/resolvers.d.ts",
+      "require": "./lib/resolvers.js",
+      "import": "./es/resolvers.mjs"
+    },
+    "./*": "./*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["vue3", "ui", "rollup"],
+  "author": "zlf",
+  "license": "ISC",
+  "peerDependencies": {
+    "@iconify/vue": "^4.1.1",
+    "element-plus": "^2.3.9",
+    "vue": "^3.2.0"
+  },
+  "dependencies": {
+    "file-saver": "^2.0.5",
+    "tinycolor2": "^1.6.0",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@iconify/vue": "^4.1.1"
+  }
+}

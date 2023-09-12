@@ -1,0 +1,6 @@
+@use "common/table-var" as *;
+@use "mixins/var" as *;
+
+:root {
+  @include set-component-css-var("table", $table);
+}

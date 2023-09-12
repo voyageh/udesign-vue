@@ -1,0 +1,40 @@
+@use "mixins/mixins" as *;
+@use "mixins/var" as *;
+@use "common/table-var" as *;
+
+@include b(table) {
+  @include set-component-css-var("table", $table);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include m("search") {
+    background-color: var(--ul-table-box-bg-color);
+    margin-bottom: 15px;
+    padding: 15px 15px 0;
+  }
+
+  @include m("main") {
+    background-color: var(--ul-table-box-bg-color);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @include m("header") {
+    margin-bottom: 15px;
+  }
+
+  @include m("paging") {
+    margin-top: 15px;
+    justify-content: flex-end;
+  }
+
+  .el-table th.el-table__cell {
+    background-color: var(--ul-table-header-bg-color);
+    color: var(--ul-table-header-text-color);
+  }
+}

@@ -1,0 +1,11 @@
+@use "sass:map";
+
+$table: () !default;
+$table: map.merge(
+  (
+    "header-bg-color": #f2f3f5,
+    "header-text-color": #1d2129,
+    "box-bg-color": #fff,
+  ),
+  $table
+);

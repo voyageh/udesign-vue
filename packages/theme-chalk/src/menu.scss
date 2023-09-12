@@ -1,0 +1,20 @@
+@use "mixins/mixins" as *;
+
+@include b(menu) {
+  &:not(.el-menu--collapse) {
+    width: var(--menu-item-width);
+  }
+
+  .el-menu-item.is-active {
+    background-color: var(--selected-bg-color) !important;
+  }
+
+  .el-sub-menu__title:hover {
+    color: var(--menu-item-hover-color) !important;
+    background-color: var(--el-menu-hover-bg-color) !important;
+  }
+
+  .el-menu-item:not(.is-active):hover {
+    color: var(--menu-item-hover-color);
+  }
+}

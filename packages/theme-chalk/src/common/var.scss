@@ -1,0 +1,16 @@
+// common/var.scss 定义一些颜色变量，比如 $colors, $text-color, $border-color, $fill-color, $disabled 等等。
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../mixins/function.scss" as *;
+
+$table: () !default;
+$table: map.merge(
+  (
+    "header-bg-color": getCssVar("table", "header-bg-color"),
+    "header-text-color": getCssVar("table", "header-text-color"),
+    "box-bg-color": getCssVar("table", "box-bg-color"),
+  ),
+  $table
+);
