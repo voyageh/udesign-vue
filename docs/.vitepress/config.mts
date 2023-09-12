@@ -26,7 +26,7 @@ export default defineConfig({
       }),
       Components({ resolvers: [ElementPlusResolver(), resolvers()] }),
       mPlugin({
-        demoSrc: "demos",
+        demoSrc: "docs/demos",
       }),
     ],
     ssr: {
