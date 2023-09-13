@@ -5,12 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent, computed } from "vue";
+import { computed } from "vue";
 import { useNamespace } from "@udesign-vue/hooks";
 import tinycolor from "tinycolor2";
 import { menuProps } from "./menu";
-
-const UlMenuItem = defineAsyncComponent(() => import("./menu-item.vue"));
+import UlMenuItem from "./menu-item.vue";
 
 defineOptions({ name: "ul-menu" });
 const props = defineProps(menuProps);

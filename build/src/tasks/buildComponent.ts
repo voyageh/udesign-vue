@@ -1,18 +1,19 @@
-import { rollup } from "rollup";
-import glob from "fast-glob";
-import { pkgRoot } from "../utils/paths";
-import VueMacros from "unplugin-vue-macros/rollup";
+import commonjs from "@rollup/plugin-commonjs";
+import nodeResolve from "@rollup/plugin-node-resolve";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import nodeResolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
+import glob from "fast-glob";
+import { rollup } from "rollup";
 import esbuild from "rollup-plugin-esbuild";
-import Components from "unplugin-vue-components/rollup";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-import { target, buildConfig } from "../config/build-info";
-import UdesignVueAlias from "../plugins/udesign-vue-alias";
+import Components from "unplugin-vue-components/rollup";
+import VueMacros from "unplugin-vue-macros/rollup";
+import { buildConfig, target } from "../config/build-info";
 import generateDts from "../plugins/generate-dts";
+import UdesignVueAlias from "../plugins/udesign-vue-alias";
+import { pkgRoot } from "../utils/paths";
 import { generateExternal } from "../utils/rollup";
+
 
 export const buildComponent = async () => {
   // 使用 fast-glob 查找packages/**符合指定条件的文件

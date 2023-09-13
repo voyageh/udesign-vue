@@ -18,12 +18,7 @@ export default defineConfig(({ mode }) => {
       Components({
         dts: "src/components.d.ts",
         resolvers: [
-          resolvers(),
-          (componentName) => {
-            console.log(componentName);
-
-            if (componentName.startsWith("Van")) return { name: componentName.slice(3), from: "vant" };
-          },
+          ElementPlusResolver()
         ],
       }),
     ],
