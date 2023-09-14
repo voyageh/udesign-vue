@@ -21,6 +21,6 @@
   "dependencies": {
     "markdown-it": "^13.0.1",
     "prism-theme-vars": "^0.2.4",
-    "udesign-vue": "^1.0.7"
+    "udesign-vue": "^1.0.12"
   }
 }

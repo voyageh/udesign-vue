@@ -17,3 +17,7 @@
 .vp-doc ol {
   padding-left: 0;
 }
+
+.vp-doc tr:nth-child(2n){
+  background-color: transparent;
+}

@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import VueMacros from "unplugin-vue-macros/vite";
 import Vue from "@vitejs/plugin-vue";
 import VueJsx from "@vitejs/plugin-vue-jsx";
-import Components from "unplugin-vue-components/vite";
+import Components from "./dist/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import resolvers from "udesign-vue/es/resolvers";
 

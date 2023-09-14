@@ -8,7 +8,9 @@
       </el-row>
       <ul-form-item v-else :prop="rest" v-model="form[rest.id!]"></ul-form-item>
     </template>
-    <slot />
+    <el-form>
+      <slot />
+    </el-form>
   </el-form>
 </template>
 

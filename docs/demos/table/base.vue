@@ -4,8 +4,18 @@
 </template>
 
 <script setup lang="tsx">
-import { reactive, h } from "vue";
+import {
+  h,
+  reactive,
+  resolveComponent as _resolveComponent,
+  shallowRef,
+} from "vue";
 import { type TableProps } from "udesign-vue";
+
+const ElDatePicker = shallowRef(_resolveComponent("el-date-picker"));
+const ElInput = shallowRef(_resolveComponent("el-input"));
+const ElSelect = shallowRef(_resolveComponent("el-select"));
+const ElInputNumber = shallowRef(_resolveComponent("el-input-number"));
 
 const config: TableProps = reactive({
   columns: [
@@ -19,17 +29,18 @@ const config: TableProps = reactive({
     },
     {
       label: "是否安装GPS",
-      formatter: (row) => (row.HaveGps == "1" ? "有" : "没有"),
+      formatter: (row) => (row.HaveGps === "1" ? "有" : "没有"),
     },
   ],
   searchForms: [
     {
       label: "违规日期",
       id: "a",
-      component: "date",
+      component: ElDatePicker,
       el: {
         type: "daterange",
       },
+      span: 8,
     },
     {
       label: () =>
@@ -43,32 +54,35 @@ const config: TableProps = reactive({
           "车牌号码"
         ),
       id: "b",
-      component: "input",
+      component: ElInput,
       default: "苏州",
       el: {
         placeholder: "车牌号",
       },
+      span: 8,
     },
     {
       id: "c",
       label: "车辆类型",
-      component: "select",
+      component: ElSelect,
       options: [
         {
           label: "A",
           value: "A",
         },
       ],
+      span: 8,
     },
     {
       id: "e",
       label: "清单类型",
-      component: "input-number",
+      component: ElInputNumber,
+      span: 8,
     },
     {
       id: "f",
       label: "处理状态",
-      component: "input",
+      component: ElSelect,
     },
   ],
   forms: [
@@ -88,13 +102,46 @@ const config: TableProps = reactive({
       component: "input",
     },
   ],
-  hasOperationColumn: false,
+  getList() {
+    return {
+      list: [
+        {
+          CompanyName: "1",
+        },
+        {
+          CompanyName: "2",
+        },
+        {
+          CompanyName: "3",
+        },
+        {
+          CompanyName: "3",
+        },
+        {
+          CompanyName: "3",
+        },
+        {
+          CompanyName: "3",
+        },
+        {
+          CompanyName: "3",
+        },
+        {
+          CompanyName: "3",
+        },
+        {
+          CompanyName: "3",
+        },
+      ],
+      total: 300,
+    };
+  },
 });
 
 const onclick = async () => {
   config.searchForms?.push({
     label: "李四",
-    component: "input",
+    component: ElInput,
   });
 };
 </script>

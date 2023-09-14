@@ -2,8 +2,7 @@
   <div :class="[ns.b()]">
     <div :class="[ns.m('search')]">
       <ul-form ref="searchFormRef" :content="searchForms" inline>
-        <el-form-item>
-          <el-button type="primary" @click="onSearch">
+        <el-button type="primary" @click="onSearch">
             <template #icon>
               <Icon icon="ep:search" />
             </template>
@@ -15,7 +14,6 @@
             </template>
             重置
           </el-button>
-        </el-form-item>
       </ul-form>
     </div>
     <div :class="[ns.m('main')]">
