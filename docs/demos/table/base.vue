@@ -3,7 +3,7 @@
   <el-button @click="onclick">添加筛选条件</el-button>
 </template>
 
-<script setup lang="tsx">
+<script setup lang="ts">
 import {
   h,
   reactive,
